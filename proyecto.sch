@@ -12442,6 +12442,136 @@ www.irf.com&lt;p&gt;
 </deviceset>
 </devicesets>
 </library>
+<library name="switch-omron" urn="urn:adsk.eagle:library:377">
+<description>&lt;b&gt;Omron Switches&lt;/b&gt;&lt;p&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="B3F-10XX" urn="urn:adsk.eagle:footprint:27476/1" library_version="3">
+<description>&lt;b&gt;OMRON SWITCH&lt;/b&gt;</description>
+<wire x1="3.302" y1="-0.762" x2="3.048" y2="-0.762" width="0.1524" layer="21"/>
+<wire x1="3.302" y1="-0.762" x2="3.302" y2="0.762" width="0.1524" layer="21"/>
+<wire x1="3.048" y1="0.762" x2="3.302" y2="0.762" width="0.1524" layer="21"/>
+<wire x1="3.048" y1="1.016" x2="3.048" y2="2.54" width="0.1524" layer="51"/>
+<wire x1="-3.302" y1="0.762" x2="-3.048" y2="0.762" width="0.1524" layer="21"/>
+<wire x1="-3.302" y1="0.762" x2="-3.302" y2="-0.762" width="0.1524" layer="21"/>
+<wire x1="-3.048" y1="-0.762" x2="-3.302" y2="-0.762" width="0.1524" layer="21"/>
+<wire x1="3.048" y1="2.54" x2="2.54" y2="3.048" width="0.1524" layer="51"/>
+<wire x1="2.54" y1="-3.048" x2="3.048" y2="-2.54" width="0.1524" layer="51"/>
+<wire x1="3.048" y1="-2.54" x2="3.048" y2="-1.016" width="0.1524" layer="51"/>
+<wire x1="-2.54" y1="3.048" x2="-3.048" y2="2.54" width="0.1524" layer="51"/>
+<wire x1="-3.048" y1="2.54" x2="-3.048" y2="1.016" width="0.1524" layer="51"/>
+<wire x1="-2.54" y1="-3.048" x2="-3.048" y2="-2.54" width="0.1524" layer="51"/>
+<wire x1="-3.048" y1="-2.54" x2="-3.048" y2="-1.016" width="0.1524" layer="51"/>
+<wire x1="-1.27" y1="1.27" x2="-1.27" y2="-1.27" width="0.0508" layer="51"/>
+<wire x1="1.27" y1="-1.27" x2="-1.27" y2="-1.27" width="0.0508" layer="51"/>
+<wire x1="1.27" y1="-1.27" x2="1.27" y2="1.27" width="0.0508" layer="51"/>
+<wire x1="-1.27" y1="1.27" x2="1.27" y2="1.27" width="0.0508" layer="51"/>
+<wire x1="-1.27" y1="3.048" x2="-1.27" y2="2.794" width="0.0508" layer="21"/>
+<wire x1="1.27" y1="2.794" x2="-1.27" y2="2.794" width="0.0508" layer="21"/>
+<wire x1="1.27" y1="2.794" x2="1.27" y2="3.048" width="0.0508" layer="21"/>
+<wire x1="1.143" y1="-2.794" x2="-1.27" y2="-2.794" width="0.0508" layer="21"/>
+<wire x1="1.143" y1="-2.794" x2="1.143" y2="-3.048" width="0.0508" layer="21"/>
+<wire x1="-1.27" y1="-2.794" x2="-1.27" y2="-3.048" width="0.0508" layer="21"/>
+<wire x1="2.54" y1="-3.048" x2="2.159" y2="-3.048" width="0.1524" layer="51"/>
+<wire x1="-2.54" y1="-3.048" x2="-2.159" y2="-3.048" width="0.1524" layer="51"/>
+<wire x1="-2.159" y1="-3.048" x2="-1.27" y2="-3.048" width="0.1524" layer="21"/>
+<wire x1="-2.54" y1="3.048" x2="-2.159" y2="3.048" width="0.1524" layer="51"/>
+<wire x1="2.54" y1="3.048" x2="2.159" y2="3.048" width="0.1524" layer="51"/>
+<wire x1="2.159" y1="3.048" x2="1.27" y2="3.048" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="3.048" x2="-1.27" y2="3.048" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="3.048" x2="-2.159" y2="3.048" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="-3.048" x2="1.143" y2="-3.048" width="0.1524" layer="21"/>
+<wire x1="1.143" y1="-3.048" x2="2.159" y2="-3.048" width="0.1524" layer="21"/>
+<wire x1="3.048" y1="-0.762" x2="3.048" y2="-1.016" width="0.1524" layer="21"/>
+<wire x1="3.048" y1="0.762" x2="3.048" y2="1.016" width="0.1524" layer="21"/>
+<wire x1="-3.048" y1="-0.762" x2="-3.048" y2="-1.016" width="0.1524" layer="21"/>
+<wire x1="-3.048" y1="0.762" x2="-3.048" y2="1.016" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="-2.159" x2="1.27" y2="-2.159" width="0.1524" layer="51"/>
+<wire x1="1.27" y1="2.286" x2="-1.27" y2="2.286" width="0.1524" layer="51"/>
+<wire x1="-2.413" y1="1.27" x2="-2.413" y2="0.508" width="0.1524" layer="51"/>
+<wire x1="-2.413" y1="-0.508" x2="-2.413" y2="-1.27" width="0.1524" layer="51"/>
+<wire x1="-2.413" y1="0.508" x2="-2.159" y2="-0.381" width="0.1524" layer="51"/>
+<circle x="0" y="0" radius="1.778" width="0.1524" layer="21"/>
+<circle x="-2.159" y="-2.159" radius="0.508" width="0.1524" layer="51"/>
+<circle x="2.159" y="-2.032" radius="0.508" width="0.1524" layer="51"/>
+<circle x="2.159" y="2.159" radius="0.508" width="0.1524" layer="51"/>
+<circle x="-2.159" y="2.159" radius="0.508" width="0.1524" layer="51"/>
+<circle x="0" y="0" radius="0.635" width="0.0508" layer="51"/>
+<circle x="0" y="0" radius="0.254" width="0.1524" layer="21"/>
+<pad name="1" x="-3.2512" y="2.2606" drill="1.016" shape="long"/>
+<pad name="3" x="-3.2512" y="-2.2606" drill="1.016" shape="long"/>
+<pad name="2" x="3.2512" y="2.2606" drill="1.016" shape="long"/>
+<pad name="4" x="3.2512" y="-2.2606" drill="1.016" shape="long"/>
+<text x="-3.048" y="3.683" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-3.048" y="-5.08" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
+<text x="-4.318" y="1.651" size="1.27" layer="51" ratio="10">1</text>
+<text x="3.556" y="1.524" size="1.27" layer="51" ratio="10">2</text>
+<text x="-4.572" y="-2.794" size="1.27" layer="51" ratio="10">3</text>
+<text x="3.556" y="-2.794" size="1.27" layer="51" ratio="10">4</text>
+</package>
+</packages>
+<packages3d>
+<package3d name="B3F-10XX" urn="urn:adsk.eagle:package:27496/1" type="box" library_version="3">
+<description>OMRON SWITCH</description>
+<packageinstances>
+<packageinstance name="B3F-10XX"/>
+</packageinstances>
+</package3d>
+</packages3d>
+<symbols>
+<symbol name="TS2" urn="urn:adsk.eagle:symbol:27469/1" library_version="3">
+<wire x1="0" y1="1.905" x2="0" y2="2.54" width="0.254" layer="94"/>
+<wire x1="-4.445" y1="1.905" x2="-3.175" y2="1.905" width="0.254" layer="94"/>
+<wire x1="-4.445" y1="-1.905" x2="-3.175" y2="-1.905" width="0.254" layer="94"/>
+<wire x1="-4.445" y1="1.905" x2="-4.445" y2="0" width="0.254" layer="94"/>
+<wire x1="-4.445" y1="0" x2="-4.445" y2="-1.905" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="0" x2="-1.905" y2="0" width="0.1524" layer="94"/>
+<wire x1="-1.27" y1="0" x2="-0.635" y2="0" width="0.1524" layer="94"/>
+<wire x1="-4.445" y1="0" x2="-3.175" y2="0" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="2.54" x2="0" y2="2.54" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="-2.54" x2="0" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="0" y1="-2.54" x2="-1.27" y2="1.905" width="0.254" layer="94"/>
+<circle x="0" y="-2.54" radius="0.127" width="0.4064" layer="94"/>
+<circle x="0" y="2.54" radius="0.127" width="0.4064" layer="94"/>
+<text x="-6.35" y="-2.54" size="1.778" layer="95" rot="R90">&gt;NAME</text>
+<text x="-3.81" y="3.175" size="1.778" layer="96" rot="R90">&gt;VALUE</text>
+<pin name="P" x="0" y="-5.08" visible="pad" length="short" direction="pas" swaplevel="2" rot="R90"/>
+<pin name="S" x="0" y="5.08" visible="pad" length="short" direction="pas" swaplevel="1" rot="R270"/>
+<pin name="S1" x="2.54" y="5.08" visible="pad" length="short" direction="pas" swaplevel="1" rot="R270"/>
+<pin name="P1" x="2.54" y="-5.08" visible="pad" length="short" direction="pas" swaplevel="2" rot="R90"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="10-XX" urn="urn:adsk.eagle:component:27498/2" prefix="S" uservalue="yes" library_version="3">
+<description>&lt;b&gt;OMRON SWITCH&lt;/b&gt;</description>
+<gates>
+<gate name="1" symbol="TS2" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="B3F-10XX">
+<connects>
+<connect gate="1" pin="P" pad="3"/>
+<connect gate="1" pin="P1" pad="4"/>
+<connect gate="1" pin="S" pad="1"/>
+<connect gate="1" pin="S1" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:27496/1"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="MF" value="" constant="no"/>
+<attribute name="MPN" value="B3F-1000" constant="no"/>
+<attribute name="OC_FARNELL" value="176432" constant="no"/>
+<attribute name="OC_NEWARK" value="36M3542" constant="no"/>
+<attribute name="POPULARITY" value="72" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -12512,6 +12642,10 @@ www.irf.com&lt;p&gt;
 <part name="Q2" library="transistor-small-signal" library_urn="urn:adsk.eagle:library:401" deviceset="BSS123" device="" package3d_urn="urn:adsk.eagle:package:28738/2"/>
 <part name="GND15" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="R8" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="10K"/>
+<part name="S1" library="switch-omron" library_urn="urn:adsk.eagle:library:377" deviceset="10-XX" device="" package3d_urn="urn:adsk.eagle:package:27496/1"/>
+<part name="C23" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0201" package3d_urn="urn:adsk.eagle:package:23690/2" value="0.1u"/>
+<part name="R9" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R1206" package3d_urn="urn:adsk.eagle:package:23540/2" value="10K"/>
+<part name="GND16" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -12525,13 +12659,13 @@ www.irf.com&lt;p&gt;
 <attribute name="LAST_DATE_TIME" x="217.17" y="10.16" size="2.286" layer="94"/>
 <attribute name="SHEET" x="230.505" y="5.08" size="2.54" layer="94"/>
 </instance>
-<instance part="J1" gate="G$1" x="33.02" y="149.86" smashed="yes">
-<attribute name="NAME" x="49.53" y="157.48" size="1.778" layer="95" align="center-left"/>
-<attribute name="VALUE" x="49.53" y="154.94" size="1.778" layer="96" align="center-left"/>
+<instance part="J1" gate="G$1" x="497.84" y="147.32" smashed="yes">
+<attribute name="NAME" x="514.35" y="154.94" size="1.778" layer="95" align="center-left"/>
+<attribute name="VALUE" x="514.35" y="152.4" size="1.778" layer="96" align="center-left"/>
 </instance>
-<instance part="PS1" gate="G$1" x="12.7" y="111.76" smashed="yes">
-<attribute name="NAME" x="46.99" y="119.38" size="1.778" layer="95" align="center-left"/>
-<attribute name="VALUE" x="46.99" y="116.84" size="1.778" layer="96" align="center-left"/>
+<instance part="PS1" gate="G$1" x="17.78" y="111.76" smashed="yes">
+<attribute name="NAME" x="52.07" y="119.38" size="1.778" layer="95" align="center-left"/>
+<attribute name="VALUE" x="52.07" y="116.84" size="1.778" layer="96" align="center-left"/>
 </instance>
 <instance part="K1" gate="G$1" x="304.8" y="149.86" smashed="yes">
 <attribute name="NAME" x="297.18" y="156.21" size="1.778" layer="95"/>
@@ -12651,11 +12785,11 @@ www.irf.com&lt;p&gt;
 <instance part="GND11" gate="1" x="387.35" y="7.112" smashed="yes">
 <attribute name="VALUE" x="384.81" y="4.572" size="1.778" layer="96"/>
 </instance>
-<instance part="+3V1" gate="G$1" x="53.34" y="127" smashed="yes">
-<attribute name="VALUE" x="50.8" y="121.92" size="1.778" layer="96" rot="R90"/>
+<instance part="+3V1" gate="G$1" x="58.42" y="127" smashed="yes">
+<attribute name="VALUE" x="55.88" y="121.92" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="GND12" gate="1" x="53.34" y="104.14" smashed="yes">
-<attribute name="VALUE" x="50.8" y="101.6" size="1.778" layer="96"/>
+<instance part="GND12" gate="1" x="58.42" y="104.14" smashed="yes">
+<attribute name="VALUE" x="55.88" y="101.6" size="1.778" layer="96"/>
 </instance>
 <instance part="C17" gate="G$1" x="452.12" y="104.14" smashed="yes">
 <attribute name="NAME" x="453.644" y="104.521" size="1.778" layer="95"/>
@@ -12742,6 +12876,21 @@ www.irf.com&lt;p&gt;
 <instance part="R8" gate="G$1" x="223.52" y="109.22" smashed="yes">
 <attribute name="NAME" x="219.71" y="110.7186" size="1.778" layer="95"/>
 <attribute name="VALUE" x="219.71" y="105.918" size="1.778" layer="96"/>
+</instance>
+<instance part="S1" gate="1" x="48.26" y="25.4" smashed="yes" rot="R270">
+<attribute name="NAME" x="45.72" y="31.75" size="1.778" layer="95"/>
+<attribute name="VALUE" x="51.435" y="29.21" size="1.778" layer="96"/>
+</instance>
+<instance part="C23" gate="G$1" x="49.784" y="17.78" smashed="yes" rot="R270">
+<attribute name="NAME" x="50.165" y="16.256" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="45.085" y="16.256" size="1.778" layer="96" rot="R270"/>
+</instance>
+<instance part="R9" gate="G$1" x="60.96" y="25.4" smashed="yes" rot="MR0">
+<attribute name="NAME" x="64.77" y="26.8986" size="1.778" layer="95" rot="MR0"/>
+<attribute name="VALUE" x="64.77" y="22.098" size="1.778" layer="96" rot="MR0"/>
+</instance>
+<instance part="GND16" gate="1" x="38.1" y="10.16" smashed="yes">
+<attribute name="VALUE" x="35.56" y="7.62" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -12843,9 +12992,9 @@ www.irf.com&lt;p&gt;
 </segment>
 <segment>
 <pinref part="PS1" gate="G$1" pin="-VOUT"/>
-<wire x1="50.8" y1="109.22" x2="53.34" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="55.88" y1="109.22" x2="58.42" y2="109.22" width="0.1524" layer="91"/>
 <pinref part="GND12" gate="1" pin="GND"/>
-<wire x1="53.34" y1="109.22" x2="53.34" y2="106.68" width="0.1524" layer="91"/>
+<wire x1="58.42" y1="109.22" x2="58.42" y2="106.68" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="C19" gate="G$1" pin="1"/>
@@ -12870,6 +13019,16 @@ www.irf.com&lt;p&gt;
 <pinref part="GND15" gate="1" pin="GND"/>
 <pinref part="Q2" gate="G$1" pin="S"/>
 <wire x1="236.22" y1="104.14" x2="236.22" y2="106.68" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="S1" gate="1" pin="P"/>
+<pinref part="GND16" gate="1" pin="GND"/>
+<wire x1="43.18" y1="25.4" x2="38.1" y2="25.4" width="0.1524" layer="91"/>
+<wire x1="38.1" y1="25.4" x2="38.1" y2="17.78" width="0.1524" layer="91"/>
+<pinref part="C23" gate="G$1" pin="2"/>
+<wire x1="38.1" y1="17.78" x2="38.1" y2="12.7" width="0.1524" layer="91"/>
+<wire x1="44.704" y1="17.78" x2="38.1" y2="17.78" width="0.1524" layer="91"/>
+<junction x="38.1" y="17.78"/>
 </segment>
 </net>
 <net name="VDD1" class="0">
@@ -12966,9 +13125,9 @@ www.irf.com&lt;p&gt;
 <net name="+3V3" class="0">
 <segment>
 <pinref part="PS1" gate="G$1" pin="+VOUT"/>
-<wire x1="50.8" y1="111.76" x2="53.34" y2="111.76" width="0.1524" layer="91"/>
+<wire x1="55.88" y1="111.76" x2="58.42" y2="111.76" width="0.1524" layer="91"/>
 <pinref part="+3V1" gate="G$1" pin="+3V3"/>
-<wire x1="53.34" y1="111.76" x2="53.34" y2="124.46" width="0.1524" layer="91"/>
+<wire x1="58.42" y1="111.76" x2="58.42" y2="124.46" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="C22" gate="G$1" pin="1"/>
@@ -13240,6 +13399,79 @@ www.irf.com&lt;p&gt;
 <pinref part="R8" gate="G$1" pin="1"/>
 <wire x1="218.44" y1="109.22" x2="213.36" y2="109.22" width="0.1524" layer="91"/>
 <label x="198.12" y="109.22" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="N$14" class="0">
+<segment>
+<pinref part="C23" gate="G$1" pin="1"/>
+<wire x1="52.324" y1="17.78" x2="55.88" y2="17.78" width="0.1524" layer="91"/>
+<pinref part="R9" gate="G$1" pin="2"/>
+<wire x1="55.88" y1="17.78" x2="55.88" y2="25.4" width="0.1524" layer="91"/>
+<pinref part="S1" gate="1" pin="S"/>
+<wire x1="55.88" y1="25.4" x2="53.34" y2="25.4" width="0.1524" layer="91"/>
+<junction x="55.88" y="25.4"/>
+</segment>
+</net>
+<net name="EN" class="0">
+<segment>
+<pinref part="U1" gate="A" pin="EN"/>
+<wire x1="111.76" y1="124.46" x2="109.22" y2="124.46" width="0.1524" layer="91"/>
+<label x="109.22" y="124.46" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="R9" gate="G$1" pin="1"/>
+<wire x1="66.04" y1="25.4" x2="68.58" y2="25.4" width="0.1524" layer="91"/>
+<label x="66.04" y="25.4" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="LINEA" class="0">
+<segment>
+<pinref part="PS1" gate="G$1" pin="VAC_IN_(L)"/>
+<wire x1="17.78" y1="109.22" x2="15.24" y2="109.22" width="0.1524" layer="91"/>
+<label x="10.16" y="109.22" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="K1" gate="G$1" pin="COM"/>
+<wire x1="314.96" y1="152.4" x2="317.5" y2="152.4" width="0.1524" layer="91"/>
+<label x="317.5" y="152.4" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="TIERRA" class="0">
+<segment>
+<pinref part="J1" gate="G$1" pin="2"/>
+<wire x1="497.84" y1="144.78" x2="495.3" y2="144.78" width="0.1524" layer="91"/>
+<label x="490.22" y="144.78" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="CARGA" class="0">
+<segment>
+<pinref part="J1" gate="G$1" pin="1"/>
+<wire x1="497.84" y1="147.32" x2="495.3" y2="147.32" width="0.1524" layer="91"/>
+<label x="490.22" y="147.32" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="NEUTRO" class="0">
+<segment>
+<pinref part="J1" gate="G$1" pin="3"/>
+<wire x1="497.84" y1="142.24" x2="495.3" y2="142.24" width="0.1524" layer="91"/>
+<label x="487.68" y="142.24" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="PS1" gate="G$1" pin="VAC_IN_(N)"/>
+<wire x1="17.78" y1="111.76" x2="15.24" y2="111.76" width="0.1524" layer="91"/>
+<label x="7.62" y="111.76" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="CARGA_M" class="0">
+<segment>
+<pinref part="K1" gate="G$1" pin="NO"/>
+<wire x1="314.96" y1="147.32" x2="317.5" y2="147.32" width="0.1524" layer="91"/>
+<label x="317.5" y="147.32" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="R3" gate="G$1" pin="1"/>
+<wire x1="354.33" y1="78.74" x2="354.33" y2="76.708" width="0.1524" layer="91"/>
+<label x="353.06" y="66.04" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
 </nets>
