@@ -13449,6 +13449,11 @@ www.irf.com&lt;p&gt;
 <wire x1="497.84" y1="147.32" x2="495.3" y2="147.32" width="0.1524" layer="91"/>
 <label x="490.22" y="147.32" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="R3" gate="G$1" pin="4"/>
+<wire x1="354.33" y1="99.06" x2="354.33" y2="100.33" width="0.1524" layer="91"/>
+<label x="354.33" y="98.806" size="1.778" layer="95" rot="R90"/>
+</segment>
 </net>
 <net name="NEUTRO" class="0">
 <segment>
