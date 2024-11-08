@@ -13887,12 +13887,12 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 </classes>
 <parts>
 <part name="FRAME1" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="A5L-LOC" device=""/>
-<part name="J1" library="SamacSys_Parts" deviceset="796638-3" device=""/>
-<part name="PS1" library="SamacSys_Parts" deviceset="RAC03-3.3SK" device=""/>
-<part name="K1" library="PR28-3V-360-1A-E" deviceset="PR28-3V-360-1A-E" device=""/>
+<part name="J1" library="SamacSys_Parts" deviceset="796638-3" device="" override_package3d_urn="urn:adsk.eagle:package:45704347/2" override_package_urn="urn:adsk.eagle:footprint:45704348/1"/>
+<part name="PS1" library="SamacSys_Parts" deviceset="RAC03-3.3SK" device="" override_package3d_urn="urn:adsk.eagle:package:45704370/2" override_package_urn="urn:adsk.eagle:footprint:45704371/1"/>
+<part name="K1" library="PR28-3V-360-1A-E" deviceset="PR28-3V-360-1A-E" device="" override_package3d_urn="urn:adsk.eagle:package:45704378/2" override_package_urn="urn:adsk.eagle:footprint:45704379/1"/>
 <part name="FRAME2" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="A4L-LOC" device=""/>
-<part name="U1" library="2024-09-07_16-09-34_Library" deviceset="ESP32-PICO-MINI-02-N8R2" device="ESP32-PICO-MINI-02_EXP"/>
-<part name="IC1" library="SamacSys_Parts" deviceset="ADE9153AACPZ" device=""/>
+<part name="U1" library="2024-09-07_16-09-34_Library" deviceset="ESP32-PICO-MINI-02-N8R2" device="ESP32-PICO-MINI-02_EXP" override_package3d_urn="urn:adsk.eagle:package:45704361/2" override_package_urn="urn:adsk.eagle:footprint:45704362/1"/>
+<part name="IC1" library="SamacSys_Parts" deviceset="ADE9153AACPZ" device="" override_package3d_urn="urn:adsk.eagle:package:45704388/2" override_package_urn="urn:adsk.eagle:footprint:45704389/1"/>
 <part name="C1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0402K" package3d_urn="urn:adsk.eagle:package:23679/2" value="0.1u"/>
 <part name="C2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0402K" package3d_urn="urn:adsk.eagle:package:23679/2" value="4.7u"/>
 <part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
@@ -13928,7 +13928,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <part name="C19" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0402K" package3d_urn="urn:adsk.eagle:package:23679/2" value="0.1u"/>
 <part name="R1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="150"/>
 <part name="R2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="150"/>
-<part name="R3" library="SamacSys_Parts" deviceset="WSK12161L000FEB" device=""/>
+<part name="R3" library="SamacSys_Parts" deviceset="WSK12161L000FEB" device="" override_package3d_urn="urn:adsk.eagle:package:45704385/2" override_package_urn="urn:adsk.eagle:footprint:45704386/1"/>
 <part name="R4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="330k"/>
 <part name="R5" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="330k"/>
 <part name="R6" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="330k"/>
@@ -13954,14 +13954,14 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <part name="+3V6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
 <part name="+3V7" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
 <part name="+3V8" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
-<part name="S1" library="SamacSys_Parts" deviceset="SKRKAEE020" device=""/>
+<part name="S1" library="SamacSys_Parts" deviceset="SKRKAEE020" device="" override_package3d_urn="urn:adsk.eagle:package:45704391/2" override_package_urn="urn:adsk.eagle:footprint:45704392/1"/>
 <part name="GND16" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="LED1" library="SamacSys_Parts" deviceset="NCD0805R1" device=""/>
+<part name="LED1" library="SamacSys_Parts" deviceset="NCD0805R1" device="" override_package3d_urn="urn:adsk.eagle:package:45704401/2" override_package_urn="urn:adsk.eagle:footprint:45704402/1"/>
 <part name="R10" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="1k"/>
 <part name="GND19" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="LED2" library="libreria_propia" deviceset="NCD0805B2" device=""/>
+<part name="LED2" library="libreria_propia" deviceset="NCD0805B2" device="" override_package3d_urn="urn:adsk.eagle:package:45704399/2" override_package_urn="urn:adsk.eagle:footprint:45704400/1"/>
 <part name="R11" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="1k"/>
-<part name="LED3" library="libreria_propia" deviceset="NCD0805G1" device=""/>
+<part name="LED3" library="libreria_propia" deviceset="NCD0805G1" device="" override_package3d_urn="urn:adsk.eagle:package:45704396/2" override_package_urn="urn:adsk.eagle:footprint:45704397/1"/>
 <part name="R12" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="1k"/>
 <part name="TP3" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="PTR1" device="TP10R" package3d_urn="urn:adsk.eagle:package:27959/1" value="PTR1TP10R"/>
 <part name="TP4" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="PTR1" device="TP10R" package3d_urn="urn:adsk.eagle:package:27959/1" value="PTR1TP10R"/>
@@ -14355,6 +14355,11 @@ LA CARGA</text>
 <wire x1="441.96" y1="83.82" x2="444.5" y2="83.82" width="0.1524" layer="91"/>
 <pinref part="GND6" gate="1" pin="GND"/>
 <wire x1="444.5" y1="83.82" x2="444.5" y2="78.74" width="0.1524" layer="91"/>
+<pinref part="IC1" gate="G$1" pin="IBMS"/>
+<wire x1="441.96" y1="88.9" x2="447.04" y2="88.9" width="0.1524" layer="91"/>
+<wire x1="447.04" y1="88.9" x2="447.04" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="447.04" y1="83.82" x2="444.5" y2="83.82" width="0.1524" layer="91"/>
+<junction x="444.5" y="83.82"/>
 </segment>
 <segment>
 <pinref part="C11" gate="G$1" pin="2"/>
@@ -14606,7 +14611,7 @@ LA CARGA</text>
 <segment>
 <pinref part="IC1" gate="G$1" pin="DVDDOUT"/>
 <wire x1="406.4" y1="99.06" x2="403.86" y2="99.06" width="0.1524" layer="91"/>
-<label x="396.24" y="99.06" size="1.778" layer="95"/>
+<label x="403.86" y="99.06" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="VDDOUT2P5" class="0">
@@ -14619,7 +14624,7 @@ LA CARGA</text>
 <segment>
 <pinref part="IC1" gate="G$1" pin="VDDOUT2P5"/>
 <wire x1="416.56" y1="60.96" x2="416.56" y2="58.42" width="0.1524" layer="91"/>
-<label x="416.56" y="58.42" size="1.778" layer="95" rot="R270"/>
+<label x="416.56" y="58.42" size="1.778" layer="95" rot="R270" xref="yes"/>
 </segment>
 </net>
 <net name="MSH" class="0">
@@ -14734,7 +14739,7 @@ LA CARGA</text>
 <segment>
 <pinref part="IC1" gate="G$1" pin="CLKOUT"/>
 <wire x1="406.4" y1="96.52" x2="398.78" y2="96.52" width="0.1524" layer="91"/>
-<label x="398.78" y="96.52" size="1.778" layer="95"/>
+<label x="398.78" y="96.52" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <pinref part="Q1" gate="G$1" pin="2"/>
@@ -14748,7 +14753,7 @@ LA CARGA</text>
 <segment>
 <pinref part="IC1" gate="G$1" pin="CLKIN"/>
 <wire x1="406.4" y1="93.98" x2="398.78" y2="93.98" width="0.1524" layer="91"/>
-<label x="398.78" y="93.98" size="1.778" layer="95"/>
+<label x="398.78" y="93.98" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <pinref part="C16" gate="G$1" pin="2"/>
@@ -14765,9 +14770,9 @@ LA CARGA</text>
 <wire x1="378.46" y1="93.98" x2="383.54" y2="93.98" width="0.1524" layer="91"/>
 <wire x1="383.54" y1="93.98" x2="383.54" y2="94.234" width="0.1524" layer="91"/>
 <pinref part="IC1" gate="G$1" pin="IAN"/>
-<wire x1="406.4" y1="86.36" x2="396.24" y2="86.36" width="0.1524" layer="91"/>
-<wire x1="396.24" y1="86.36" x2="396.24" y2="94.234" width="0.1524" layer="91"/>
-<wire x1="396.24" y1="94.234" x2="383.54" y2="94.234" width="0.1524" layer="91"/>
+<wire x1="406.4" y1="86.36" x2="392.684" y2="86.36" width="0.1524" layer="91"/>
+<wire x1="392.684" y1="86.36" x2="392.684" y2="94.234" width="0.1524" layer="91"/>
+<wire x1="392.684" y1="94.234" x2="383.54" y2="94.234" width="0.1524" layer="91"/>
 <junction x="383.54" y="94.234"/>
 </segment>
 </net>
@@ -14777,9 +14782,9 @@ LA CARGA</text>
 <pinref part="C19" gate="G$1" pin="2"/>
 <wire x1="378.46" y1="73.66" x2="383.54" y2="73.66" width="0.1524" layer="91"/>
 <pinref part="IC1" gate="G$1" pin="IAP"/>
-<wire x1="406.4" y1="83.82" x2="396.24" y2="83.82" width="0.1524" layer="91"/>
-<wire x1="396.24" y1="83.82" x2="396.24" y2="73.66" width="0.1524" layer="91"/>
-<wire x1="396.24" y1="73.66" x2="383.54" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="406.4" y1="83.82" x2="393.7" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="393.7" y1="83.82" x2="393.7" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="393.7" y1="73.66" x2="383.54" y2="73.66" width="0.1524" layer="91"/>
 <wire x1="383.54" y1="73.66" x2="383.54" y2="73.914" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -14788,6 +14793,12 @@ LA CARGA</text>
 <pinref part="R1" gate="G$1" pin="1"/>
 <pinref part="R3" gate="G$1" pin="3"/>
 <wire x1="368.3" y1="93.98" x2="361.95" y2="93.98" width="0.1524" layer="91"/>
+<pinref part="IC1" gate="G$1" pin="IAMS"/>
+<wire x1="406.4" y1="88.9" x2="396.24" y2="88.9" width="0.1524" layer="91"/>
+<wire x1="396.24" y1="88.9" x2="396.24" y2="99.06" width="0.1524" layer="91"/>
+<wire x1="396.24" y1="99.06" x2="361.95" y2="99.06" width="0.1524" layer="91"/>
+<wire x1="361.95" y1="99.06" x2="361.95" y2="93.98" width="0.1524" layer="91"/>
+<junction x="361.95" y="93.98"/>
 </segment>
 </net>
 <net name="N$6" class="0">
@@ -14869,7 +14880,7 @@ LA CARGA</text>
 <segment>
 <pinref part="IC1" gate="G$1" pin="!SS"/>
 <wire x1="416.56" y1="129.54" x2="416.56" y2="132.08" width="0.1524" layer="91"/>
-<label x="416.56" y="129.54" size="1.778" layer="95" rot="R90"/>
+<label x="416.56" y="132.08" size="1.778" layer="95" rot="R90" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U1" gate="A" pin="IO32"/>
@@ -14881,7 +14892,7 @@ LA CARGA</text>
 <segment>
 <pinref part="IC1" gate="G$1" pin="SCLK"/>
 <wire x1="419.1" y1="129.54" x2="419.1" y2="132.08" width="0.1524" layer="91"/>
-<label x="419.1" y="129.54" size="1.778" layer="95" rot="R90"/>
+<label x="419.1" y="132.08" size="1.778" layer="95" rot="R90" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U1" gate="A" pin="IO33"/>
@@ -14893,7 +14904,7 @@ LA CARGA</text>
 <segment>
 <pinref part="IC1" gate="G$1" pin="MISO/TX"/>
 <wire x1="421.64" y1="129.54" x2="421.64" y2="132.08" width="0.1524" layer="91"/>
-<label x="421.64" y="129.54" size="1.778" layer="95" rot="R90"/>
+<label x="421.64" y="132.08" size="1.778" layer="95" rot="R90" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U1" gate="A" pin="IO25"/>
@@ -14905,7 +14916,7 @@ LA CARGA</text>
 <segment>
 <pinref part="IC1" gate="G$1" pin="MOSI/RX"/>
 <wire x1="424.18" y1="129.54" x2="424.18" y2="132.08" width="0.1524" layer="91"/>
-<label x="424.18" y="129.54" size="1.778" layer="95" rot="R90"/>
+<label x="424.18" y="132.08" size="1.778" layer="95" rot="R90" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U1" gate="A" pin="IO26"/>
@@ -14917,7 +14928,7 @@ LA CARGA</text>
 <segment>
 <pinref part="IC1" gate="G$1" pin="!RESET"/>
 <wire x1="426.72" y1="129.54" x2="426.72" y2="132.08" width="0.1524" layer="91"/>
-<label x="426.72" y="129.54" size="1.778" layer="95" rot="R90"/>
+<label x="426.72" y="132.08" size="1.778" layer="95" rot="R90" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U1" gate="A" pin="IO27"/>
@@ -14929,7 +14940,7 @@ LA CARGA</text>
 <segment>
 <pinref part="IC1" gate="G$1" pin="!IRQ"/>
 <wire x1="429.26" y1="129.54" x2="429.26" y2="132.08" width="0.1524" layer="91"/>
-<label x="429.26" y="129.54" size="1.778" layer="95" rot="R90"/>
+<label x="429.26" y="132.08" size="1.778" layer="95" rot="R90" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U1" gate="A" pin="IO14"/>
@@ -14941,7 +14952,7 @@ LA CARGA</text>
 <segment>
 <pinref part="IC1" gate="G$1" pin="CF1"/>
 <wire x1="431.8" y1="129.54" x2="431.8" y2="132.08" width="0.1524" layer="91"/>
-<label x="431.8" y="129.54" size="1.778" layer="95" rot="R90"/>
+<label x="431.8" y="132.08" size="1.778" layer="95" rot="R90" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U1" gate="A" pin="IO12"/>
@@ -14978,9 +14989,9 @@ LA CARGA</text>
 <junction x="152.908" y="66.294"/>
 </segment>
 <segment>
-<pinref part="U1" gate="A" pin="IO13"/>
-<wire x1="33.274" y1="62.992" x2="30.734" y2="62.992" width="0.1016" layer="91"/>
-<label x="30.734" y="62.992" size="1.778" layer="95" rot="R180" xref="yes"/>
+<pinref part="U1" gate="A" pin="IO15"/>
+<wire x1="33.274" y1="60.452" x2="30.734" y2="60.452" width="0.1524" layer="91"/>
+<label x="30.734" y="60.452" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="EN" class="0">
@@ -15145,6 +15156,27 @@ LA CARGA</text>
 <label x="322.58" y="66.04" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
+<net name="N$16" class="0">
+<segment>
+<pinref part="IC1" gate="G$1" pin="IBN"/>
+<wire x1="419.1" y1="60.96" x2="419.1" y2="58.42" width="0.1524" layer="91"/>
+<pinref part="IC1" gate="G$1" pin="IBP"/>
+<wire x1="419.1" y1="58.42" x2="421.64" y2="58.42" width="0.1524" layer="91"/>
+<wire x1="421.64" y1="58.42" x2="421.64" y2="60.96" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="CF2" class="0">
+<segment>
+<pinref part="IC1" gate="G$1" pin="ZX/DREADY/CF2"/>
+<wire x1="434.34" y1="129.54" x2="434.34" y2="132.08" width="0.1524" layer="91"/>
+<label x="434.34" y="132.08" size="1.778" layer="95" rot="R90" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U1" gate="A" pin="IO13"/>
+<wire x1="33.274" y1="62.992" x2="30.734" y2="62.992" width="0.1016" layer="91"/>
+<label x="30.734" y="62.992" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
 </nets>
 </sheet>
 </sheets>
@@ -15169,6 +15201,11 @@ will not be understood (or retained) with this version.
 Since Version 8.3, EAGLE supports the association of 3D packages
 with devices in libraries, schematics, and board files. Those 3D
 packages will not be understood (or retained) with this version.
+</note>
+<note version="9.4" severity="warning">
+Since Version 9.4, EAGLE supports the overriding of 3D packages
+in schematics and board files. Those overridden 3d packages
+will not be understood (or retained) with this version.
 </note>
 <note version="8.4" severity="warning">
 Since Version 8.4, EAGLE supports properties for SPICE simulation. 
