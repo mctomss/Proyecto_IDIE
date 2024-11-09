@@ -1,0 +1,9 @@
+Manufacturer=Analog Devices
+PartNumber=ADE9153AACPZ
+PartCategory=Integrated Circuit
+PackageCategory=Quad Flat No-Lead
+PinCount=33
+Version=1.3
+Released=2018-04-24 11:36:59
+Downloaded=2024-09-07 14:30:48
+3D=Y

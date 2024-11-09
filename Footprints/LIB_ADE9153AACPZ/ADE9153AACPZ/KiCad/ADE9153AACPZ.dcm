@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP ADE9153AACPZ
+D Data Acquisition ADCs/DACs - Specialized 1 PH Mtr IC w/ Auto Calibration
+K
+F http://www.analog.com/media/en/technical-documentation/data-sheets/ade9153a.pdf
+$ENDCMP
+#
+#End Doc Library

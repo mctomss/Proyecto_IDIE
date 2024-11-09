@@ -1,0 +1,11 @@
+FILE_TYPE = MULTI_PHYS_TABLE;
+
+PART 'ADE9153AACPZ'
+CLASS = IC
+{========================================================================================}
+:"MANUFACTURER_NAME", "MANUFACTURER_PART_NUMBER"= "PART_NUMBER", "JEDEC_TYPE", "PACK_TYPE", "MOUSER_PART_NUMBER", "MOUSER_PRICE/STOCK", "DESCRIPTION", "DATASHEET", "HEIGHT";
+{========================================================================================}
+ "Analog Devices", "ADE9153AACPZ" (!) = "", "QFN50P500X500X80-33N-D", "Quad Flat No-Lead", "584-ADE9153AACPZ", "https://www.mouser.co.uk/ProductDetail/Analog-Devices/ADE9153AACPZ?qs=rrS6PyfT74fO4%2FDiqnqz3A%3D%3D", "Data Acquisition ADCs/DACs - Specialized 1 PH Mtr IC w/ Auto Calibration", "http://www.analog.com/media/en/technical-documentation/data-sheets/ade9153a.pdf", "0.8 mm"
+END_PART
+
+END.

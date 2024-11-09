@@ -1,0 +1,13 @@
+(unit MM)
+
+(package "RAC03-3_3SK"
+    (type UNDEF)
+    (uver 2)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (utime 2020-07-03-08:48:02)
+    (mountForm default
+        (footprintRef "RAC0305SK")
+        (spec "System")
+    )
+)

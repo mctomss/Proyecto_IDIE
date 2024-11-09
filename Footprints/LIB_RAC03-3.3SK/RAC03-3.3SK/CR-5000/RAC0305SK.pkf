@@ -1,0 +1,10 @@
+(unit MM)
+
+(package "RAC0305SK"
+    (type UNDEF)
+    (uver 2)
+    (mountForm default
+        (footprintRef "RAC0305SK")
+        (spec "default")
+    )
+)

@@ -1,0 +1,16 @@
+.ADE9153AACPZ :1 ;Data Acquisition ADCs/DACs - Specialized 1 PH Mtr IC w/ Auto Calibration
+QFN50P500X500X80-33N-D
+*STM IC
+*NGS
+*PLB 1="DGND_1" 2="DVDDOUT" 3="CLKOUT" 4="CLKIN" 5="VDD_1" 6="IAMS" 7="IAN" 8="IAP" 9="AGND_1" 10="VDDOUT2P5" 11="IBN" 12="IBP" 13="VAMS" 14="VAP" 15="VAN" 16="AVDDOUT" 17="AGND_2" 18="REFIN" 19="IBMS" 20="DGND_2" 21="MSH" 22="FA1" 23="FA0" 24="VDD_2" 25="ZX/DREADY/CF2" 26="CF1" 27="'IRQ'" 28="'RESET'" 29="MOSI/RX" 30="MISO/TX" 31="SCLK" 32="'SS'" 33="EP"
+*MXP 33
+*DFN ADE9153AACPZ
+~!Mouser Part Number (584-ADE9153AACPZ)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/Analog-Devices/ADE9153AACPZ?qs=rrS6PyfT74fO4%2FDiqnqz3A%3D%3D)
+~!Manufacturer_Name (Analog Devices)
+~!Manufacturer_Part_Number (ADE9153AACPZ)
+~!Link Datasheet (http://www.analog.com/media/en/technical-documentation/data-sheets/ade9153a.pdf)
+~!Height (0.8mm)
+~!3D_Model (ADE9153AACPZ)
+ADE9153AACPZ
+1.1!U 2.1!U 3.1!U 4.1!U 5.1!U 6.1!U 7.1!U 8.1!U 9.1!U 10.1!U 11.1!U 12.1!U 13.1!U 14.1!U 15.1!U 16.1!U 24.1!U 23.1!U 22.1!U 21.1!U 20.1!U 19.1!U 18.1!U 17.1!U 33.1!U 32.1!U 31.1!U 30.1!U 29.1!U 28.1!U 27.1!U 26.1!U 25.1!U 
