@@ -1,0 +1,11 @@
+FILE_TYPE = MULTI_PHYS_TABLE;
+
+PART 'ESP32_S3_WROOM_1_N8'
+CLASS = IC
+{========================================================================================}
+:"MANUFACTURER_NAME", "MANUFACTURER_PART_NUMBER"= "PART_NUMBER", "JEDEC_TYPE", "PACK_TYPE", "MOUSER_PART_NUMBER", "MOUSER_PRICE/STOCK", "DESCRIPTION", "DATASHEET", "HEIGHT";
+{========================================================================================}
+ "Espressif Systems", "ESP32-S3-WROOM-1-N8" (!) = "", "ESP32S3WROOM1N8R2", "Other", "356-ESP32-S3WROOM1N8", "https://www.mouser.co.uk/ProductDetail/Espressif-Systems/ESP32-S3-WROOM-1-N8?qs=Wj%2FVkw3K%252BMC1mq0KGPvoSQ%3D%3D", "SMD MODULE, ESP32-S3, 8 MB SPI F", "https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf", "3.25 mm"
+END_PART
+
+END.

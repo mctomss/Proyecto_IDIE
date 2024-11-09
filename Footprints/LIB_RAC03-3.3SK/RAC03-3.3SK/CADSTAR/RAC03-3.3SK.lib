@@ -1,0 +1,16 @@
+.RAC03-3.3SK :1 ;AC/DC Power Modules 3W 85-264Vin 3.3Vout 900mA
+RAC0305SK
+*STM PS
+*NGS
+*PLB 1="VAC IN (L)" 2="-VOUT" 3="+VOUT" 4="VAC IN (N)"
+*MXP 4
+*DFN RAC03-3.3SK
+~!Mouser Part Number (919-RAC03-3.3SK)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/RECOM-Power/RAC03-3.3SK?qs=EBDBlbfErPyS11fagCV%252BCw%3D%3D)
+~!Manufacturer_Name (RECOM Power)
+~!Manufacturer_Part_Number (RAC03-3.3SK)
+~!Link Datasheet (https://recom-power.com/pdf/Powerline_AC-DC/RAC03-K.pdf)
+~!Height (18.4mm)
+~!3D_Model (RAC03-3.3SK)
+RAC03-3.3SK
+1.1!U 2.1!U 3.1!U 4.1!U 

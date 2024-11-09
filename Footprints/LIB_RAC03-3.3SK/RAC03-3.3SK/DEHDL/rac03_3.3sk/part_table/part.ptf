@@ -1,0 +1,11 @@
+FILE_TYPE = MULTI_PHYS_TABLE;
+
+PART 'RAC03_3.3SK'
+CLASS = DISCRETE
+{========================================================================================}
+:"MANUFACTURER_NAME", "MANUFACTURER_PART_NUMBER"= "PART_NUMBER", "JEDEC_TYPE", "PACK_TYPE", "MOUSER_PART_NUMBER", "MOUSER_PRICE/STOCK", "DESCRIPTION", "DATASHEET", "HEIGHT";
+{========================================================================================}
+ "RECOM Power", "RAC03-3.3SK" (!) = "", "RAC0305SK", "Other", "919-RAC03-3.3SK", "https://www.mouser.co.uk/ProductDetail/RECOM-Power/RAC03-3.3SK?qs=EBDBlbfErPyS11fagCV%252BCw%3D%3D", "AC/DC Power Modules 3W 85-264Vin 3.3Vout 900mA", "https://recom-power.com/pdf/Powerline_AC-DC/RAC03-K.pdf", "18.4 mm"
+END_PART
+
+END.
