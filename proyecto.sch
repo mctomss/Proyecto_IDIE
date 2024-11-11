@@ -15033,7 +15033,7 @@ LA CARGA</text>
 <label x="490.22" y="66.04" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
-<net name="CARGA" class="0">
+<net name="M" class="0">
 <segment>
 <pinref part="J1" gate="G$1" pin="1"/>
 <wire x1="492.76" y1="68.58" x2="490.22" y2="68.58" width="0.1524" layer="91"/>
