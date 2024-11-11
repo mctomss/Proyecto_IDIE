@@ -36,9 +36,6 @@ const char* device_keyPath = "/device_key.txt";
 const char* ipPath = "/ip.txt";
 const char* gatewayPath = "/gateway.txt";
 
-// Definir la clase ThingerESP32
-//ThingerESP32* thing;
-
 //Configuración de la red
 IPAddress localIP;
 IPAddress localGateway;
@@ -144,14 +141,14 @@ void setup(){
     Serial.println(gateway);
     //
     if(initWiFi()) {
-        // Código para ejecutar si la conexión a la red WiFi es exitosa
-        /*thing = new ThingerESP32(muser.c_str(), device_id.c_str(), device_key.c_str()); // Inicializar la clase ThingerESP32
-        pinMode(16, OUTPUT);
-        // digital pin control example (i.e. turning on/off a light, a relay, configuring a parameter, etc)
-        (*thing)["GPIO_16"] << digitalPin(16);
-
-        // resource output example (i.e. reading a sensor value)
-        (*thing)["millis"] >> outputValue(millis());*/
+      // Definir la clase ThingerESP32
+      ThingerESP32 thing(muser.c_str(), device_id.c_str(), device_key.c_str());
+      pinMode(16, OUTPUT);
+      thing["GPIO_16"] << digitalPin(16);
+      thing["millis"] >> outputValue(millis());
+      while (true) {
+        thing.handle();
+      }
     }
     else {
         // Configurar el ESP32 como un punto de acceso
@@ -241,6 +238,4 @@ void setup(){
     }
 }
 void loop(){
-    // Código para ejecutar en el loop
-    //thing->handle();
 }
