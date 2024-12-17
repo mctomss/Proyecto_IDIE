@@ -1,13 +1,34 @@
-#include <Arduino.h>
-#include <WiFi.h>
-#include <ESPAsyncWebServer.h>
-#include <AsyncTCP.h>
-#include "LittleFS.h"
-#include <ThingerESP32.h>
-#include <math.h>
-#include <SPI.h>
+/*
+Autores: Tomás Felipe Montañez Piñeros
+         Juan Andrés Rodríguez Ruiz
+         Juan Andrés Abella Ballen
+Escuela Colombiana de Ingenieria Julio Garavito.
+SmartEnergy LinkMQ
+16 de diciembre de 2024
+*/
 
-#define THINGER_SERIAL_DEBUG
+/*
+Recomendaciones:
+*Es necesario tener los archivos ADE9153A.h, ADE9153AAPI.h y ADE9153AAPI.cpp
+ en la misma carpeta que el archivo Firmware.ino
+*Es necesario tener los archivos wifimanager.html y style.css en la carpeta data,
+ la cual se encuentra en la misma carpeta que el archivo Firmware.ino
+*Es posible que no se ejecute correctamente si se usa el archivo ADE9153AAPI.cpp
+ original de Analog Devices, deibdo a que se le realizó un cambio a la inicilización del SPI 
+*/
+
+// Librerías
+#define THINGER_SERIAL_DEBUG // Habilitar depuración del MQTT
+#include <Arduino.h> // Librería principal de Arduino
+#include <WiFi.h> // Librería para conexión WiFi
+#include <ESPAsyncWebServer.h> // Librería para servidor web
+#include <AsyncTCP.h> // Librería para conexión TCP
+#include "LittleFS.h" // Librería para sistema de archivos
+#include <ThingerESP32.h> // Librería para Thinger.io
+#include <SPI.h> // Librería para comunicación SPI
+#include "ADE9153A.h" // Librería para registros del ADE9153A
+#include "ADE9153AAPI.h" // Librería para funciones del ADE9153A
+
 // Crear un servidor web en el puerto 80
 AsyncWebServer server(80);
 
@@ -18,30 +39,54 @@ AsyncWebServer server(80);
 #define DEVICE_ID_PATH "/device_id.txt"
 #define DEVICE_KEY_PATH "/device_key.txt"
 
-// Pines SPI (Configurados para ESP32 Mini Pico 02)
-#define CS_PIN 5   // CS
-#define SCK_PIN 18 // SCK
-#define MISO_PIN 19 // MISO
-#define MOSI_PIN 23 // MOSI
+// Definción de pines para el SPI 
+#define SPI_SPEED 2000000     // Velocidad SPI ajustada a 2 MHz
+#define CS_PIN 32 // Pin de Chip Select
+#define SCK_PIN 33   // Pin de Reloj
+#define MISO_PIN 25  // Pin de MISO
+#define MOSI_PIN 26  // Pin de MOSI
+#define LED 8 // Pin del LED de Calibración
+#define RESET_PIN 27  // Pin de RESET
+ADE9153AClass ade9153A; // Instancia de la clase ADE9153A
 
-// Dirección de registros del ADE9153A
-#define CONFIG0_REG 0x0000 // Dirección del registro de configuración
+// Relé
+#define RELAY_PIN 15 // Pin del relé
+#define LED1 5 // Pin del LED 1
+#define LED2 7 // Pin del LED 2
 
-// Variables globales
+// Variables globales para almacenar la configuración de WiFi y Thinger.io
 String ssid;
 String pass;
 String muser;
 String device_id;
 String device_key;
-ThingerESP32 *thing = nullptr;
+int i=0; // Variable para hacer la calibración del ADE9153A
+ThingerESP32 *thing = nullptr; // Instancia de Thinger.io
 
-// Variables para almacenar datos del sensor
-float voltage = 0.0;
-float current = 0.0;
-float activePower = 0.0;
-float reactivePower = 0.0;
-float apparentPower = 0.0;
-float FP = 0.0;
+// Estructuras para almacenar los registros del ADE9153A
+struct PowerRegs powerVals;     
+struct RMSRegs rmsVals;
+struct EnergyRegs energyVals;
+struct PQRegs pqVals;
+struct AcalRegs acalVals;
+
+// Prototipos de funciones del ADE9153A
+void readandwrite(void);
+void resetADE9153A(void);
+void runLenght(long);
+
+// Variables para el reporte de datos
+unsigned long lastReport = 0;
+const long reportInterval = 2000;  // Cada 2 segundos
+const long SwitchToggleInterval = 2500;
+const long blinkInterval = 500;
+
+// Variables para el envío de datos
+char buffer[200];
+
+// Variables para el envío de mensajes
+unsigned long lastMsg = 0;
+char randNumber;
 
 // Función para inicializar LittleFS
 void initLittleFS() {
@@ -84,92 +129,37 @@ bool connectToWiFi() {
     Serial.println("SSID o contraseña no definidos, iniciando modo AP.");
     return false;
   }
-
+  // Conexión a WiFi
   WiFi.begin(ssid.c_str(), pass.c_str());
   Serial.print("Conectando a WiFi...");
-
+  // Esperar 15 segundos para conectarse
   unsigned long startMillis = millis();
   while (WiFi.status() != WL_CONNECTED && millis() - startMillis < 15000) {
     Serial.print(".");
     delay(500);
   }
-
+  // Verificar si se conectó
   if (WiFi.status() != WL_CONNECTED) {
     Serial.println("\nFallo en la conexión WiFi, iniciando modo AP.");
     return false;
   }
-
+  // Mostrar conexión exitosa y dirección IP
   Serial.println("\nConexión WiFi exitosa. IP: " + WiFi.localIP().toString());
   return true;
 }
 
-void writeRegister(uint16_t regAddress, uint32_t value) {
-  digitalWrite(CS_PIN, LOW);
-  SPI.transfer((regAddress >> 8) & 0xFF); // Parte alta de la dirección
-  SPI.transfer(regAddress & 0xFF);        // Parte baja de la dirección
-  SPI.transfer((value >> 24) & 0xFF);     // Byte alto
-  SPI.transfer((value >> 16) & 0xFF);
-  SPI.transfer((value >> 8) & 0xFF);
-  SPI.transfer(value & 0xFF);             // Byte bajo
-  digitalWrite(CS_PIN, HIGH);
-}
-
-uint32_t readRegister(uint16_t regAddress) {
-  uint32_t rawData = 0;
-  digitalWrite(CS_PIN, LOW);
-  SPI.transfer((regAddress >> 8) & 0xFF); // Parte alta de la dirección
-  SPI.transfer(regAddress & 0xFF);        // Parte baja de la dirección
-  rawData |= (SPI.transfer(0x00) << 24);
-  rawData |= (SPI.transfer(0x00) << 16);
-  rawData |= (SPI.transfer(0x00) << 8);
-  rawData |= SPI.transfer(0x00);
-  digitalWrite(CS_PIN, HIGH);
-  return rawData;
-}
-
-float convertToFloat(uint32_t rawData) {
-  return static_cast<float>(rawData);
-}
-
-void initADE9135() {
-  SPI.begin(SCK_PIN, MISO_PIN, MOSI_PIN, CS_PIN);
-  pinMode(CS_PIN, OUTPUT);
-  digitalWrite(CS_PIN, HIGH);
-
-  Serial.println("Configurando ADE9153A...");
-
-  // Configurar el registro CONFIG0 para activar los filtros
-  writeRegister(CONFIG0_REG, 0x000001);
-
-  Serial.println("ADE9153A configurado.");
-}
-
-void getSensorData(float &voltage, float &current, float &activePower, float &reactivePower, float &apparentPower) {
-  uint16_t regVoltage = 0x043C;       // AVRMS
-  uint16_t regCurrent = 0x0434;       // AIRMS
-  uint16_t regActivePower = 0x0440;   // AWATT
-  uint16_t regReactivePower = 0x0448; // AFVAR
-  uint16_t regApparentPower = 0x0450; // AVA
-
-  voltage = convertToFloat(readRegister(regVoltage)) / 1000.0;
-  current = convertToFloat(readRegister(regCurrent)) / 1000.0;
-  activePower = convertToFloat(readRegister(regActivePower)) / 1000.0;
-  reactivePower = convertToFloat(readRegister(regReactivePower)) / 1000.0;
-  apparentPower = convertToFloat(readRegister(regApparentPower)) / 1000.0;
-}
-
-void updateSensorData() {
-  getSensorData(voltage, current, activePower, reactivePower, apparentPower);
-}
 
 void setup() {
-  Serial.begin(115200);
-  
-  pinMode(21, OUTPUT); //Rele 
-  pinMode(29, OUTPUT); //Led Red
-  pinMode(28, OUTPUT); //Led Blue
-  pinMode(27, OUTPUT); //Led Green
-  initLittleFS();
+  Serial.begin(115200); // Iniciar comunicación serial
+  // Configurar pines de SPI
+  pinMode(CS_PIN, OUTPUT);   
+  pinMode(RELAY_PIN, OUTPUT);
+  digitalWrite(RELAY_PIN, HIGH);
+  pinMode(LED1, OUTPUT);
+  digitalWrite(LED1, LOW);
+  pinMode(LED2, OUTPUT);
+  digitalWrite(LED2, LOW);
+  initLittleFS(); // Inicializar LittleFS
 
   // Leer configuración desde LittleFS
   ssid = readFile(SSID_PATH);
@@ -187,18 +177,18 @@ void setup() {
 
   if (!connectToWiFi()) {
     // Configurar modo AP para configuración
+    digitalWrite(LED1, HIGH);
     WiFi.softAP("WiFi-Energy");
     IPAddress AP_IP = WiFi.softAPIP();
     Serial.println("Modo AP habilitado.");
     Serial.print("IP del AP: ");
     Serial.println(AP_IP);
-
     server.on("/", HTTP_GET, [](AsyncWebServerRequest *request) {
       request->send(LittleFS, "/wifimanager.html");
     });
-
+    // Configurar servidor web con los archivos de la página
     server.serveStatic("/", LittleFS, "/");
-
+    // Configurar ruta para guardar configuración
     server.on("/", HTTP_POST, [](AsyncWebServerRequest *request) {
       int params = request->params();
       for (int i = 0; i < params; i++) {
@@ -224,53 +214,148 @@ void setup() {
       }
       request->send(200, "text/plain", "Configuración guardada. Reiniciando...");
       delay(3000);
-      ESP.restart();
+      ESP.restart(); // Reiniciar ESP con la nueva configuración
     });
-
-    server.begin();
+    server.begin(); // Iniciar servidor web
   } else {
-    initADE9135();
-
+    // Configurar Thinger.io
+    digitalWrite(LED2, HIGH);
     thing = new ThingerESP32(muser.c_str(), device_id.c_str(), device_key.c_str());
-    //Control de rele
-    (*thing)["Relay"] << digitalPin(21);
-    //Sensores
-    (*thing)["Voltage"] >> outputValue(voltage);
-    (*thing)["Current"] >> outputValue(current);
-    (*thing)["Active_pow"] >> outputValue(activePower);
-    (*thing)["Reactive_pow"] >> outputValue(reactivePower);
-    (*thing)["Apparent_pow"] >> outputValue(apparentPower);
-    (*thing)["FP"] >> outputValue(FP);
-    (*thing)["FP_State"] >> [](pson &out) {
-      if (FP >= 0.9) {
-        out = "Eficient";
-      } else if (FP >= 0.8 && FP < 0.9) {
-        out = "Regular";
-      } else if (FP >= 0 && FP < 0.8) {
-        out = "Inefficient";
-      } else {
-        out = "Warning";
-      }
-    };
-    (*thing)["Current_State"] >> [](pson &out) {
-      if (current < 10) {
-        out = "Low";
-      } else if (FP >= 10 && FP < 20) {
-        out = "Regular";
-      } else {
-        out = "Danger.";
-      }
-    };
-
+    (*thing)["Relay"] << digitalPin(15); 
+    (*thing)["Active_pow"] >> outputValue(powerVals.ActivePowerValue/1000);
+    (*thing)["Reactive_pow"] >> outputValue(powerVals.FundReactivePowerValue/1000);
+    (*thing)["Apparent_pow"] >> outputValue(powerVals.ApparentPowerValue/1000);
+    (*thing)["Voltage"] >> outputValue(rmsVals.VoltageRMSValue/1000);
+    (*thing)["Current"] >> outputValue(rmsVals.CurrentRMSValue/1000);
+    (*thing)["FP"] >> outputValue(pqVals.PowerFactorValue);
+    (*thing)["Frequency"] >> outputValue(pqVals.FrequencyValue);
+    (*thing)["Active_ene"] >> outputValue(energyVals.ActiveEnergyValue/1000);
+    (*thing)["Reactive_ene"] >> outputValue(energyVals.FundReactiveEnergyValue/1000);
+    (*thing)["Apparent_energy"] >> outputValue(energyVals.ApparentEnergyValue/1000);
     Serial.println("Conexión a Thinger.io configurada.");
   }
+  resetADE9153A(); // Restablecer ADE9153A para configuración
+  delay(1000);
+  // Inicializar ADE9153A
+  bool commscheck = ade9153A.SPI_Init(SPI_SPEED, CS_PIN, MISO_PIN, MOSI_PIN, SCK_PIN);
+  if (!commscheck) {
+    Serial.println("ADE9153A no detectado");
+    while (!commscheck) { // Esperar hasta que se detecte el ADE9153A
+      delay(1000);
+    }
+  }
+  // Configurar ADE9153A
+  ade9153A.SetupADE9153A();
+  ade9153A.SPI_Write_32(REG_AIGAIN, -268435456);
 }
 
 void loop() {
-  updateSensorData();
+  //Calibración del ADE9153A
+  if (i == 0) {
+    Serial.println("Autocalibrating Current Channel");
+    ade9153A.StartAcal_AINormal();
+    runLenght(20);
+    ade9153A.StopAcal();
+    Serial.println("Autocalibrating Voltage Channel");
+    ade9153A.StartAcal_AV();
+    runLenght(40);
+    ade9153A.StopAcal();
+    delay(100);
+    //Lectura de registros de calibración
+    ade9153A.ReadAcalRegs(&acalVals);
+    Serial.print("AICC: ");
+    Serial.println(acalVals.AICC);
+    Serial.print("AICERT: ");
+    Serial.println(acalVals.AcalAICERTReg);
+    Serial.print("AVCC: ");
+    Serial.println(acalVals.AVCC);
+    Serial.print("AVCERT: ");
+    Serial.println(acalVals.AcalAVCERTReg);
+    //Configuración de ganancias
+    long Igain = (-(acalVals.AICC / 838.190) - 1) * 134217728;
+    long Vgain = ((acalVals.AVCC / 13411.05) - 1) * 134217728;
+    ade9153A.SPI_Write_32(REG_AIGAIN, Igain);
+    ade9153A.SPI_Write_32(REG_AVGAIN, Vgain);
+    Serial.println("Autocalibration Complete");
+    delay(2000);
+    i = 1;
+  }
+  //Lectura de registros del ADE9153A
+  unsigned long currentReport = millis();
+  if (currentReport - lastReport >= reportInterval) {
+    readandwrite();
+    lastReport = currentReport;
+  }
+  //Envío de datos a Thinger.io
   if (thing != nullptr) {
     thing->handle();
   }
-  delay(500); //valor de tiempo para actualizar datos.
-  FP = cos(atan(reactivePower / activePower));
+}
+//Función para leer y escribir registros del ADE9153A
+void readandwrite() {
+  ade9153A.ReadPowerRegs(&powerVals);
+  ade9153A.ReadRMSRegs(&rmsVals);
+  ade9153A.ReadPQRegs(&pqVals);
+  ade9153A.ReadEnergyRegs(&energyVals);
+  //Imprimir valores de corriente eficaz
+  Serial.print("RMS Current:\t");        
+  Serial.print(rmsVals.CurrentRMSValue / 1000); 
+  Serial.println(" A");
+  //Imprimir valores de voltaje eficaz
+  Serial.print("RMS Voltage:\t");        
+  Serial.print(rmsVals.VoltageRMSValue / 1000);
+  Serial.println(" V");
+  //Imprimir valores de potencia activa
+  Serial.print("Active Power:\t");        
+  Serial.print(powerVals.ActivePowerValue / 1000);
+  Serial.println(" W");
+  //Imprimir valores de potencia reactiva
+  Serial.print("Reactive Power:\t");        
+  Serial.print(powerVals.FundReactivePowerValue / 1000);
+  Serial.println(" VAR");
+  //Imprimir valores de potencia aparente
+  Serial.print("Apparent Power:\t");        
+  Serial.print(powerVals.ApparentPowerValue / 1000);
+  Serial.println(" VA");
+  //Imprimir valores de factor de potencia
+  Serial.print("Power Factor:\t");        
+  Serial.println(pqVals.PowerFactorValue);
+  //Imprimir valores de frecuencia
+  Serial.print("Frequency:\t");        
+  Serial.print(pqVals.FrequencyValue);
+  Serial.println(" Hz");
+  //Imprimir valores de energía activa
+  Serial.print("Active Energy:\t");
+  Serial.print(energyVals.ActiveEnergyValue / 1000);
+  Serial.println(" Wh");  
+  //Imprimir valores de energía reactiva
+  Serial.print("Reactive Energy:\t");
+  Serial.print(energyVals.FundReactiveEnergyValue / 1000);
+  Serial.println(" VARh");
+  //Imprimir valores de energía aparente
+  Serial.print("Apparent Energy:\t");
+  Serial.print(energyVals.ApparentEnergyValue / 1000);
+  Serial.println(" VAh");
+
+  Serial.println("");
+  Serial.println("");
+}
+//Función para restablecer el ADE9153A
+void resetADE9153A(void) {
+  digitalWrite(RESET_PIN, LOW);
+  delay(100);
+  digitalWrite(RESET_PIN, HIGH);
+  delay(1000);
+  Serial.println("Reset Done");
+}
+//Función para la duración de la calibración
+void runLenght(long seconds) {
+  unsigned long startTime = millis();
+  
+  while (millis() - startTime < (seconds * 1000)) {
+    digitalWrite(LED, HIGH);
+    delay(blinkInterval);
+    digitalWrite(LED, LOW);
+    delay(blinkInterval);
+  }
 }
