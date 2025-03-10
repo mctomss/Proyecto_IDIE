@@ -1,4 +1,7 @@
 # Proyecto_IDIE - Medidor de Variables Eléctricas con Control Remoto
+by: Juan Andres Rodriguez Ruiz
+    Juan Andres Abella Ballen
+    Tomás Felipe Montañez Piñeros
 
 Este repositorio contiene el diseño y firmware de un **circuito medidor de variables eléctricas**, capaz de monitorear y controlar una carga conectada a la red doméstica. El dispositivo se comunica a través de **MQTT**, permitiendo visualizar las mediciones y controlar la carga desde un celular o computador.
 
